@@ -2,7 +2,6 @@ import pandas as pd
 from src.models.k_means_clustering_recommender_data_model import KMeansClusteringRecommenderDataModel
 from ast import literal_eval
 
-
 class KMeansDataReaderPkl:
     def __init__(self, path_to_features_dataset_pkl):
         self._path_to_features_dataset_pkl = path_to_features_dataset_pkl

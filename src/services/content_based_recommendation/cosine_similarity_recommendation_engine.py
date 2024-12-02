@@ -11,7 +11,6 @@ class CosineSimilarityRecommendationEngine:
     def generate_recommendations(self, client_feature_vector, client_features_indices, playlist_size, exclude_artists_from_client_playlist):
         cosine_similarities = cosine_similarity(np.asarray(client_feature_vector),
                                                 sc.sparse.csr_matrix.toarray(self._global_features_sparse)).flatten()
-        # Exclude client's tracks from recommendations by setting their similarity to -inf
         cosine_similarities[client_features_indices] = -np.inf
         top_indices = np.argsort(-cosine_similarities)[:playlist_size]
         top_recommendations = self._track_info[top_indices]

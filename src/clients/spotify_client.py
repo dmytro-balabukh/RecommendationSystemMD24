@@ -27,7 +27,6 @@ class SpotifyClient:
         results = self.sp.search(q=query, type='track', limit=1)
         tracks = results['tracks']['items']
         if tracks:
-            # Just returning the first track's name and artists for simplicity
             first_track = tracks[0]
             track_info = {
                 'name': first_track['name'],

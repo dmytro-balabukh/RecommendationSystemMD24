@@ -8,7 +8,6 @@ class KNNDataReaderPkl:
         self.__df = pd.read_pickle(self._path_to_features_dataset_pkl)
 
     def get_data_model(self):
-        # Prepare data for KNN
         audio_feats = ["acousticness", "danceability", "energy", "instrumentalness", "valence", "tempo"]
         model_data = self.__df.copy()
         model_data = model_data.dropna(subset=audio_feats)

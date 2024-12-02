@@ -1,10 +1,7 @@
 import numpy as np
 import pandas as pd
 from scipy.sparse import csr_matrix
-
 from src.models.cosine_similarity_recommender_data_model import CosineSimilarityRecommenderDataModel
-
-
 class CosineSimilarityDataReaderPkl:
     def __init__(self, path_to_features_dataset_pkl):
         self._path_to_features_dataset_pkl = path_to_features_dataset_pkl
